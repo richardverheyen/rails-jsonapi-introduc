@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: products
+#
+#  id           :integer          not null, primary key
+#  public       :boolean          default(FALSE)
+#  name         :string
+#  pitch        :string
+#  product_type :string
+#  slug         :string
+#  corpus       :text
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
+richard:
+  tagline: tagline
+  image: img
+  lat: 1.11
+  lng: 2.22
+
+jan:
+  tagline: tagline
+  image: img
+  lat: 3.33
+  lng: 4.44
