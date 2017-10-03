@@ -12,55 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20170929083203) do
 
-  create_table "contacts", force: :cascade do |t|
-    t.string "name"
-    t.string "company"
-    t.string "email"
-    t.string "website"
-    t.string "phone"
-    t.string "fax"
-    t.string "address"
-    t.string "country_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "countries", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "documents", force: :cascade do |t|
-    t.string "name"
-    t.string "url"
-    t.string "document_type"
-    t.string "locale"
-    t.boolean "public"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "product_translations", force: :cascade do |t|
-    t.integer "product_id"
-    t.string "locale"
-    t.string "name"
-    t.text "corpus"
-    t.text "pitch"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "products", force: :cascade do |t|
-    t.boolean "public", default: false
-    t.string "name"
-    t.string "pitch"
-    t.string "product_type"
-    t.string "slug"
-    t.text "corpus"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "tagline"
     t.string "image"
