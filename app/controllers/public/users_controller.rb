@@ -16,7 +16,7 @@ module Public
       @users = User.all
 
       @user_resources = @users.map { |user| UserResource.new(user, nil) }
-      json = JSONAPI::ResourceSerializer.new(Public::UserResource).serialize_to_hash(@user_resources)
+      json = JSONAPI::ResourceSerializer.new(Public::UserListResource).serialize_to_hash(@user_resources)
       render json: json, status: 202
     end
 
