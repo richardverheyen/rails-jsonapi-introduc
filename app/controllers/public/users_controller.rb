@@ -13,9 +13,9 @@ module Public
     def update
       @user = User.find(params[:id])
       @user.update(put_params)
-      @users = User.all
-
-      @user_resources = @users.map { |user| UserResource.new(user, nil) }
+      @userid = params[:id]
+      @users = User.where.not(id: @userid)
+      @user_resources = @users.map { |user| Public::UserListResource.new(user, nil) }
       json = JSONAPI::ResourceSerializer.new(Public::UserListResource).serialize_to_hash(@user_resources)
       render json: json, status: 202
     end
